@@ -1,299 +1,107 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mikael Monteiro Gomes | Dev Portfolio</title>
+<title>Mikael Monteiro | Software Developer</title>
+
+<link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-    font-family:Poppins,sans-serif;
-    background:#05010d;
-    color:white;
-    overflow-x:hidden;
-}
-
-/* FUNDO ANIMADO */
-canvas{
-    position:fixed;
-    top:0;left:0;
-    z-index:-1;
-}
-
-/* NAV */
-nav{
-    position:fixed;
-    width:100%;
-    top:0;
-    padding:18px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(10,0,25,0.6);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid rgba(168,85,247,0.2);
-    z-index:999;
-}
-.logo{
-    font-family:Orbitron;
-    color:#a855f7;
-    font-size:22px;
-}
-nav a{
-    color:#cbd5ff;
-    margin-left:28px;
-    text-decoration:none;
-    transition:.3s;
-}
-nav a:hover{color:#38bdf8}
-
-/* HERO */
-.hero{
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-    text-align:center;
-    padding:0 10%;
-}
-
-.foto{
-    width:170px;height:170px;
-    border-radius:50%;
-    border:3px solid #7c3aed;
-    box-shadow:0 0 50px #7c3aed;
-    margin-bottom:25px;
-    object-fit:cover;
-}
-
-h1{
-    font-family:Orbitron;
-    font-size:52px;
-    background:linear-gradient(90deg,#a855f7,#38bdf8);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.typing{
-    margin-top:15px;
-    font-size:20px;
-    color:#cbd5ff;
-    height:24px;
-}
-
-.btn{
-    margin-top:35px;
-    padding:16px 45px;
-    border:none;
-    border-radius:40px;
-    background:linear-gradient(90deg,#7c3aed,#38bdf8);
-    color:white;
-    font-weight:600;
-    cursor:pointer;
-    transition:.4s;
-    box-shadow:0 0 25px #7c3aed;
-}
-.btn:hover{transform:scale(1.1);box-shadow:0 0 40px #38bdf8}
-
-section{padding:120px 10%}
-.title{
-    font-family:Orbitron;
-    font-size:36px;
-    margin-bottom:50px;
-    background:linear-gradient(90deg,#a855f7,#38bdf8);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-/* SOBRE */
-.sobre{
-    max-width:900px;
-    font-size:18px;
-    line-height:1.8;
-    color:#cbd5ff;
-}
-
-/* SKILLS */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-}
-.card{
-    background:rgba(15,0,35,0.6);
-    border:1px solid rgba(168,85,247,0.2);
-    padding:30px;
-    border-radius:20px;
-    transition:.4s;
-    backdrop-filter:blur(10px);
-    position:relative;
-    overflow:hidden;
-}
-.card::before{
-    content:"";
-    position:absolute;
-    width:100%;height:100%;
-    background:linear-gradient(120deg,transparent,#a855f7,transparent);
-    left:-100%;top:0;
-    transition:.6s;
-}
-.card:hover::before{left:100%}
-.card:hover{
-    transform:translateY(-12px) scale(1.03);
-    box-shadow:0 0 40px #7c3aed70;
-}
-.card h3{color:#a855f7;margin-bottom:10px}
-
-/* PROJETOS */
-.projetos .card{cursor:pointer}
-
-/* MODAL */
-.modal{
-    display:none;
-    position:fixed;
-    top:0;left:0;
-    width:100%;height:100%;
-    background:rgba(0,0,0,0.8);
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-}
-.modal-content{
-    background:#070014;
-    padding:40px;
-    border-radius:20px;
-    max-width:500px;
-    text-align:center;
-    border:1px solid #7c3aed;
-}
-.close{
-    margin-top:20px;
-    padding:10px 25px;
-    background:#7c3aed;
-    border:none;
-    border-radius:20px;
-    color:white;
-    cursor:pointer;
-}
-
-/* CONTATO */
-.social a{
-    display:inline-block;
-    margin:10px;
-    padding:15px 30px;
-    border-radius:40px;
-    background:linear-gradient(90deg,#7c3aed,#38bdf8);
-    color:white;
-    font-weight:600;
-    text-decoration:none;
-    transition:.4s;
-}
-.social a:hover{transform:scale(1.1);box-shadow:0 0 30px #38bdf8}
-
-footer{text-align:center;padding:40px;color:#94a3ff}
-</style>
 </head>
+
 <body>
 
-<canvas id="bg"></canvas>
-
+<header>
 <nav>
-<div class="logo">Mikael.dev</div>
-<div>
-<a href="#">Início</a>
-<a href="#sobre">Sobre</a>
-<a href="#skills">Skills</a>
-<a href="#projetos">Projetos</a>
-<a href="#contato">Contato</a>
-</div>
+<h2 class="logo">Mikael<span>Dev</span></h2>
+<ul>
+<li><a href="#sobre">Sobre</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projetos">Projetos</a></li>
+<li><a href="#contato">Contato</a></li>
+</ul>
 </nav>
 
 <section class="hero">
-<img src="https://i.ibb.co/23SDymC8/foto-perfil.jpg" class="foto">
-<h1>Mikael Monteiro Gomes</h1>
-<div class="typing" id="typing"></div>
-<button class="btn" onclick="document.getElementById('contato').scrollIntoView()">Fale comigo</button>
-</section>
+<div class="hero-left">
+<h1>Mikael Monteiro</h1>
+<h3 id="typing"></h3>
+<p>Software Developer focado em criar sites modernos, profissionais e soluções digitais de alto nível.</p>
 
-<section id="sobre">
-<h2 class="title">Quem sou eu</h2>
-<p class="sobre">
-Estudante de Engenharia de Software e Arquitetura e Urbanismo. Apaixonado por tecnologia, inovação e criação de sistemas inteligentes.
-<br><br>
-Busco me tornar um desenvolvedor de elite, criando soluções modernas, sites profissionais e sistemas avançados.
+<div class="buttons">
+<a href="#contato" class="btn">Me contratar</a>
+<a href="#projetos" class="btn2">Ver projetos</a>
+</div>
+</div>
+
+<div class="hero-right">
+<img src="https://i.ibb.co/60MHJkQy/profile-pic.png" alt="Mikael" class="profile">
+</div>
+</section>
+</header>
+
+<section id="sobre" class="sobre">
+<h2>Sobre mim</h2>
+<p>
+Estudante de Engenharia de Software e Arquitetura, apaixonado por tecnologia e desenvolvimento web.
+Crio interfaces modernas, sites profissionais e projetos completos focados em performance e design.
 </p>
+
+<div class="info">
+<div>📍 Brasil</div>
+<div>💻 Web Developer</div>
+<div>🎓 Engenharia de Software</div>
+<div>🚀 Freelancer global</div>
+</div>
 </section>
 
-<section id="skills">
-<h2 class="title">Skills</h2>
+<section id="skills" class="skills">
+<h2>Skills Técnicas</h2>
 <div class="grid">
-<div class="card"><h3>Programação</h3><p>Python, lógica e automações.</p></div>
-<div class="card"><h3>Web Developer</h3><p>HTML, CSS, JavaScript moderno.</p></div>
-<div class="card"><h3>Tecnologia</h3><p>Suporte, otimização e performance.</p></div>
-<div class="card"><h3>Arquitetura Digital</h3><p>Design + estrutura + visão técnica.</p></div>
+<div class="box">HTML5</div>
+<div class="box">CSS3</div>
+<div class="box">JavaScript</div>
+<div class="box">UI/UX</div>
+<div class="box">GitHub</div>
+<div class="box">Responsivo</div>
+<div class="box">Landing Pages</div>
+<div class="box">Sites Premium</div>
 </div>
 </section>
 
 <section id="projetos" class="projetos">
-<h2 class="title">Projetos</h2>
-<div class="grid">
-<div class="card" onclick="abrirModal('Site profissional moderno e animado.')"><h3>Portfólio Dev</h3><p>Site futurista profissional.</p></div>
-<div class="card" onclick="abrirModal('Sistema desktop e automações em Python.')"><h3>Sistemas Python</h3><p>Automações e apps.</p></div>
-<div class="card" onclick="abrirModal('Criação de sites para empresas e negócios.')"><h3>Sites Empresariais</h3><p>Landing pages premium.</p></div>
+<h2>Projetos</h2>
+
+<div class="cards">
+<div class="card">
+<h3>Portfólio Profissional</h3>
+<p>Sites modernos e profissionais para clientes e empresas.</p>
+</div>
+
+<div class="card">
+<h3>Landing Pages</h3>
+<p>Páginas de alta conversão para negócios e serviços.</p>
+</div>
+
+<div class="card">
+<h3>Sites Empresariais</h3>
+<p>Desenvolvimento completo para empresas e profissionais.</p>
+</div>
 </div>
 </section>
 
-<section id="contato">
-<h2 class="title">Contato</h2>
-<div class="social">
-<a href="#">WhatsApp</a>
-<a href="#">Instagram</a>
-<a href="#">LinkedIn</a>
-</div>
+<section id="contato" class="contato">
+<h2>Contato</h2>
+<p>Disponível para freelas e projetos internacionais.</p>
+
+<a href="https://wa.me/558591999156" class="btn-wpp">WhatsApp</a>
+<a href="mikaelmonteiroti@gmail.com" class="btn-email">Email</a>
 </section>
 
 <footer>
-© 2026 Mikael Monteiro Gomes — Developer Future 🚀
+© 2026 Mikael Monteiro • Software Developer
 </footer>
 
-<div class="modal" id="modal">
-<div class="modal-content">
-<h2>Projeto</h2>
-<p id="modalText"></p>
-<button class="close" onclick="fecharModal()">Fechar</button>
-</div>
-</div>
-
-<script>
-/* partículas */
-const canvas=document.getElementById('bg');
-const ctx=canvas.getContext('2d');
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-let particles=[];
-for(let i=0;i<120;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2,d:Math.random()*1})}
-function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);ctx.fillStyle='#7c3aed';particles.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();p.y+=p.d;if(p.y>canvas.height)p.y=0});requestAnimationFrame(draw)}draw();
-
-/* typing */
-const text=["Futuro Engenheiro de Software","Criador de Sistemas","Dev em evolução","Tecnologia é meu mundo"];
-let i=0,j=0,current="",isDeleting=false;
-function type(){current=text[i];
-if(isDeleting){j--;}
-else{j++;}
-document.getElementById('typing').innerHTML=current.substring(0,j);
-if(!isDeleting && j==current.length){isDeleting=true;setTimeout(type,1000);return}
-if(isDeleting && j==0){isDeleting=false;i++;if(i==text.length)i=0}
-setTimeout(type,isDeleting?40:80)}
-type();
-
-/* modal */
-function abrirModal(texto){document.getElementById('modal').style.display='flex';document.getElementById('modalText').innerText=texto}
-function fecharModal(){document.getElementById('modal').style.display='none'}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
